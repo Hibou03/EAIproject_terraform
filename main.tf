@@ -67,7 +67,7 @@ clone {
     }
     network_interface{
       ipv4_adress = car.ipv4_adress
-      ipv4_netmask = 24 ########
+      ipv4_netmask = 24
     }
     ipv4_gateway = var.ipv4_gateway
   }
