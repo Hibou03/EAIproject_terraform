@@ -6,6 +6,12 @@ provider "vsphere" {
   allow_unverified_ssl = true                 #autorise connexion mm si le certif ssl n'est pas validé
 } 
 
+# Déclaration du datacenter
+data "vsphere_datacenter" "dc" {
+  name = var.datacenter
+}
+
+
 #Objet datastore ou sera stocké la vm
 data "vsphere_datastore" "datastore" {
   name = var.datastore
