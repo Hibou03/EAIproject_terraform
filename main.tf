@@ -69,10 +69,10 @@ clone {
   customize {
     linux_options{
       host_name = var.vm_name
-      domaine = "local"
+      domain = "local"
     }
     network_interface{
-      ipv4_adress = car.ipv4_adress
+      ipv4_address = car.ipv4_adress
       ipv4_netmask = 24
     }
     ipv4_gateway = var.ipv4_gateway
