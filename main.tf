@@ -37,9 +37,9 @@ data "vsphere_virtual_machine" "template" {
 }
 
 #Créer la vm en clonant un template
-data "vsphere_virtual_machine" "vm" {
+resource "vsphere_virtual_machine" "vm" {
   name = var.vm_name
-  datacenter_pool__id = data.vsphere_compute_cluster.resource_pool_id
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id = data.vsphere_datastore.datastore.id
 
   num_cpus = 2 #unité
