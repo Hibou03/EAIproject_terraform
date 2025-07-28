@@ -72,7 +72,7 @@ clone {
       domain = "local"
     }
     network_interface{
-      ipv4_address = car.ipv4_adress
+      ipv4_address = var.ipv4_adress
       ipv4_netmask = 24
     }
     ipv4_gateway = var.ipv4_gateway
