@@ -56,7 +56,7 @@ network_interface {
 #Config du disque
 disk {
   label = "disk0" 
-  size = data.vsphere_virtual_machine.template.disk.0.size
+  size = data.vsphere_virtual_machine.template.disks[0].size
   eagerly_scrub = false
   thin_provisioned = true
 }
