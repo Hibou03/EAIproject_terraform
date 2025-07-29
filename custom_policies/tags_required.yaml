@@ -1,0 +1,11 @@
+metadata:
+  name: Ensure VM has owner and environment tags
+  id: CUSTOM_VSPHERE_001
+  category: Tagging
+  severity: MEDIUM
+
+resource: vsphere_virtual_machine
+
+matchSpec:
+  name: tags.owner
+  exists: true

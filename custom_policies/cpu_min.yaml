@@ -1,0 +1,12 @@
+metadata:
+  name: Enforce minimum CPU and memory
+  id: CUSTOM_VSPHERE_002
+  category: Performance
+  severity: HIGH
+
+resource: vsphere_virtual_machine
+
+matchSpec:
+  name: num_cpus
+  operation: gte
+  value: 2

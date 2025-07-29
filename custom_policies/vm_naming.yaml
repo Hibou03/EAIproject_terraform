@@ -1,0 +1,11 @@
+metadata:
+  name: Enforce VM naming convention
+  id: CUSTOM_VSPHERE_004
+  category: Naming
+  severity: LOW
+
+resource: vsphere_virtual_machine
+
+matchSpec:
+  name: name
+  regex: ^[a-z]{2}[a-z]{2}[a-z]{1}-[a-z]{2}-[a-z0-9]+$
