@@ -3,9 +3,15 @@ metadata:
   id: CUSTOM_VSPHERE_004
   category: Naming
   severity: LOW
+  version: 1.0.0
 
-resource: vsphere_virtual_machine
+scope:
+  provider: vsphere
+  resource_types:
+    - vsphere_virtual_machine
 
-matchSpec:
-  name: name
-  regex: ^[a-z]{2}[a-z]{2}[a-z]{1}-[a-z]{2}-[a-z0-9]+$
+definition:
+  cond_type: attribute
+  attribute: name
+  operator: regex_match
+  value: ^[a-z]{2}[a-z]{2}[a-z]{1}-[a-z

@@ -1,11 +1,16 @@
 metadata:
-  name: Ensure VM has owner and environment tags
+  name: Ensure VM has owner tag
   id: CUSTOM_VSPHERE_001
   category: Tagging
   severity: MEDIUM
+  version: 1.0.0
 
-resource: vsphere_virtual_machine
+scope:
+  provider: vsphere
+  resource_types:
+    - vsphere_virtual_machine
 
-matchSpec:
-  name: tags.owner
-  exists: true
+definition:
+  cond_type: attribute
+  attribute: tags.owner
+  operator: exists
