@@ -13,5 +13,5 @@ scope:
 definition:
   cond_type: attribute
   attribute: num_cpus
-  operator: gte
+  operator: greater_than
   value: 2
