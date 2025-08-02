@@ -1,0 +1,16 @@
+metadata:
+  name: Ensure VM has a network interface configured
+  id: CUSTOM_VSPHERE_004
+  category: Network Security
+  severity: HIGH
+  version: 1.0.0
+
+scope:
+  provider: vsphere
+  resource_types:
+    - vsphere_virtual_machine
+
+definition:
+  cond_type: attribute
+  attribute: network_interface
+  operator: exists

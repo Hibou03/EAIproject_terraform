@@ -1,0 +1,17 @@
+metadata:
+  name: Ensure VM does not have public IP address
+  id: CUSTOM_VSPHERE_005
+  category: Network Security
+  severity: HIGH
+  version: 1.0.0
+
+scope:
+  provider: vsphere
+  resource_types:
+    - vsphere_virtual_machine
+
+definition:
+  cond_type: attribute
+  attribute: network_interface
+  operator: jsonpath_not_match
+  value: ".*0.0.0.0.*"

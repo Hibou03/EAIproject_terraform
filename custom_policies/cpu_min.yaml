@@ -1,5 +1,5 @@
 metadata:
-  name: Enforce minimum CPU count
+  name: Enforce minimum CPU and Memory
   id: CUSTOM_VSPHERE_002
   category: Performance
   severity: HIGH
@@ -11,7 +11,12 @@ scope:
     - vsphere_virtual_machine
 
 definition:
-  cond_type: attribute
-  attribute: num_cpus
-  operator: greater_than
-  value: 2
+  and:
+    - cond_type: attribute
+      attribute: num_cpus
+      operator: gte
+      value: 2
+    - cond_type: attribute
+      attribute: memory
+      operator: gte
+      value: 2048
