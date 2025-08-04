@@ -1,5 +1,5 @@
 metadata:
-  name: Enforce minimum CPU and Memory
+  name: Enforce maximum CPU and Memory
   id: CUSTOM_VSPHERE_002
   category: Performance
   severity: HIGH
@@ -14,9 +14,17 @@ definition:
   and:
     - cond_type: attribute
       attribute: num_cpus
-      operator: lte
-      value: 4
+      operator: within
+      value:
+        - 1
+        - 2
+        - 3
+        - 4
     - cond_type: attribute
       attribute: memory
-      operator: lte
-      value: 2048
+      operator: within
+      value:
+        - 512
+        - 1024
+        - 1536
+        - 2048
