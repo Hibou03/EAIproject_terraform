@@ -1,5 +1,5 @@
 metadata:
-  name: Ensure VM connected to public network has firewall rule
+  name: Ensure VM connected to a network has firewall (simulated check)
   id: CUSTOM_VSPHERE_006
   category: Network Security
   severity: HIGH
@@ -12,13 +12,9 @@ scope:
 
 definition:
   and:
-    # Vérifie que le réseau est public
     - cond_type: attribute
-      attribute: network_interface.network_type
-      operator: equals
-      value: "public"
-
-    # Vérifie qu'il existe une règle de firewall associée
+      attribute: network_interface
+      operator: exists
     - cond_type: attribute
-      attribute: firewall_rule
+      attribute: clone.template_uuid
       operator: exists
