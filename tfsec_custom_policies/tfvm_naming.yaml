@@ -1,0 +1,12 @@
+rule:
+  id: CUSTOM_VSPHERE_001
+  description: Enforce VM naming convention
+  impact: Non-standard names make VMs hard to track
+  resolution: Use standard naming regex
+  severity: LOW
+  provider: vsphere
+  resource_type: vsphere_virtual_machine
+  checks:
+    - key: name
+      predicate: regex
+      value: "^[a-z]{2}[a-z]{2}[a-z]{1}-[a-z]{2}-[a-z0-9]+$"

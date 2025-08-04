@@ -1,0 +1,15 @@
+rule:
+  id: CUSTOM_VSPHERE_002
+  description: Enforce maximum CPU and Memory limits
+  impact: Excess resources waste costs
+  resolution: Limit CPU ≤ 4 and Memory ≤ 2048MB
+  severity: HIGH
+  provider: vsphere
+  resource_type: vsphere_virtual_machine
+  checks:
+    - key: num_cpus
+      predicate: lte
+      value: 4
+    - key: memory
+      predicate: lte
+      value: 2048
