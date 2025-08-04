@@ -14,9 +14,9 @@ definition:
   and:
     - cond_type: attribute
       attribute: num_cpus
-      operator: not_less_than
-      value: 2
+      operator: lte
+      value: 4
     - cond_type: attribute
       attribute: memory
-      operator: not_less_than
+      operator: lte
       value: 2048
