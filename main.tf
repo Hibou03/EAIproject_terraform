@@ -70,6 +70,7 @@ clone {
     linux_options{
       host_name = var.vm_name
       domain = "local"
+      password  = var.linux_admin_password  # ← Utilisation de la variable
     }
     network_interface{
       ipv4_address = var.ipv4_adress

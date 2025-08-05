@@ -11,3 +11,5 @@ vm_name    = "csbkp-lx-app1"
 
 ipv4_adress = "192.168.10.50"
 ipv4_gateway = "192.168.10.1"
+
+linux_admin_password = "MonMotDePasseLong123!"  # Doit faire ≥ 12 caractères
