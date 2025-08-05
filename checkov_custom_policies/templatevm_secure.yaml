@@ -1,19 +1,14 @@
-# metadata:
-#   name: Ensure VM is cloned from approved template
-#   id: CUSTOM_VSPHERE_007
-#   category: Compliance
-#   severity: HIGH
-#   version: 1.0.0
+metadata:
+  name: "Ensure VM is cloned from approved template"
+  id: "CUSTOM_VSPHERE_007"
+  category: "COMPLIANCE"
+  severity: "HIGH"
 
-# scope:
-#   provider: vsphere
-#   resource_types:
-#     - vsphere_virtual_machine
-
-# definition:
-#   cond_type: attribute
-#   attribute: clone.template_uuid
-#   operator: within
-#   value:
-#     - "template-ubuntu-secure-001"
-#     - "template-windows-secure-002"
+definition:
+  resource_types: ["vsphere_virtual_machine"]  # Cible uniquement les VMs
+  condition:
+    attribute: "clone[0].template_uuid"  # [0] pour le premier élément clone
+    operator: "within"
+    value:
+      - "template-ubuntu-secure-001"  # UUID ou noms exacts
+      - "template-windows-secure-002"

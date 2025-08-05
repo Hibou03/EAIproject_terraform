@@ -1,25 +1,16 @@
-# metadata:
-#   name: Ensure VM connected to public network has firewall rule
-#   id: CUSTOM_VSPHERE_006
-#   category: Network Security
-#   severity: HIGH
-#   version: 1.0.0
+metadata:
+  name: "Ensure VM connected to public network has firewall rule"
+  id: "CUSTOM_VSPHERE_006"
+  category: "NETWORK_SECURITY"
+  severity: "HIGH"
 
-# scope:
-#   provider: vsphere
-#   resource_types:
-#     - vsphere_virtual_machine
-
-# definition:
-#   and:
-#     # Vérifie que le réseau est public
-#     - cond_type: attribute
-#       attribute: network_interface.network_type
-#       operator: equals
-#       value: "public"
-
-#     # Vérifie qu'il existe une règle de firewall associée
-#     - cond_type: attribute
-#       attribute: firewall_rule
-#       operator: exists
-      
+definition:
+  resource_types: ["vsphere_virtual_machine"]  # Cible uniquement les VMs
+  condition:
+    and:
+      - attribute: "network_interface[0].network_id"  # Vérifie le réseau
+        operator: "regex_match"
+        value: ".*public.*"  # Adaptez ce pattern à votre nomenclature
+      - attribute: "tags"  # Vérifie la présence d'un tag firewall
+        operator: "contains"
+        value: "firewall_secured"

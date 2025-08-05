@@ -44,8 +44,7 @@ resource "vsphere_virtual_machine" "vm" {
 
   num_cpus = 2 #unité
   memory = 2048
-  guest_id = data.vsphere_virtual_machine.template.guest_id 
-  admin_password = "weakpass" 
+  guest_id = data.vsphere_virtual_machine.template.guest_id
 
 
 #Config de l'interface Réseau
