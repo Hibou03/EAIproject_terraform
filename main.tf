@@ -45,6 +45,7 @@ resource "vsphere_virtual_machine" "vm" {
   num_cpus = 2 #unité
   memory = 2048
   guest_id = data.vsphere_virtual_machine.template.guest_id 
+  admin_password = "weakpass" 
 
 
 #Config de l'interface Réseau
@@ -70,7 +71,6 @@ clone {
     linux_options{
       host_name = var.vm_name
       domain = "local"
-      password  = var.linux_admin_password  # ← Utilisation de la variable
     }
     network_interface{
       ipv4_address = var.ipv4_adress
