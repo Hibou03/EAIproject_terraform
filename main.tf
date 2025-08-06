@@ -65,11 +65,12 @@ disk {
 clone {
   template_uuid = data.vsphere_virtual_machine.template.id
 
-  #Personnalisation du sys (nom,ip...)
+#Personnalisation du sys (nom,ip...)
   customize {
     linux_options{
       host_name = var.vm_name
       domain = "local"
+      password  = var.vm_password
     }
     network_interface{
       ipv4_address = var.ipv4_adress

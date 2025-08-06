@@ -8,7 +8,7 @@ definition:
   resource_types: ["vsphere_virtual_machine"]  # Cible uniquement les VMs
   condition:
     and:
-      - attribute: "network_interface[0].network_id"  # Vérifie le réseau
+      - attribute: "network_interface.network_id"  # Vérifie le réseau
         operator: "regex_match"
         value: ".*public.*"  # Adaptez ce pattern à votre nomenclature
       - attribute: "tags"  # Vérifie la présence d'un tag firewall

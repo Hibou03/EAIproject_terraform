@@ -7,7 +7,7 @@
   definition:
     resource_types: ["vsphere_virtual_machine"]  # Cible uniquement les VMs
     condition:
-      attribute: "clone[0].template_uuid"  # [0] pour le premier élément clone
+      attribute: "clone.template_uuid"  # [0] pour le premier élément clone
       operator: "within"
       value:
         - "template-ubuntu-secure-001"  # UUID ou noms exacts

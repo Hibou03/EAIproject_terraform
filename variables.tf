@@ -12,3 +12,6 @@ variable "template" {}
 variable "vm_name" {}
 variable "ipv4_adress" {}
 variable "ipv4_gateway" {}
+
+variable "vm_password" {}
+

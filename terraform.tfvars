@@ -11,3 +11,6 @@ vm_name    = "csbkp-lx-app1"
 
 ipv4_adress = "192.168.10.50"
 ipv4_gateway = "192.168.10.1"
+
+
+vm_password = "LongPassword123"
