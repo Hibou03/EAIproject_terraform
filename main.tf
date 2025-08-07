@@ -81,11 +81,3 @@ clone {
 }
 
 
-resource "vsphere_virtual_machine" "failme" {
-  name     = "bad-name"      # Violera la regex
-  num_cpus = 8               # Trop haut pour CUSTOM_VSPHERE_002
-  memory   = 4096            # Trop haut aussi
-  tags = {
-    badtag = "missing"       # Pas de owner/environment
-  }
-}
