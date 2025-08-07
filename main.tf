@@ -44,6 +44,12 @@ resource "vsphere_virtual_machine" "vm" {
 
   num_cpus = 2 #unité
   memory = 2048
+  
+  tags = {
+    owner = "hiba"
+    # environment est volontairement manquant pour tester la règle
+  }
+
   guest_id = data.vsphere_virtual_machine.template.guest_id
 
 
