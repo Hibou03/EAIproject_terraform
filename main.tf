@@ -42,8 +42,8 @@ resource "vsphere_virtual_machine" "vm" {
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id = data.vsphere_datastore.datastore.id
 
-  num_cpus = 2 #unité
-  memory = 2048
+  num_cpus = 6 #unité
+  memory = 3012
   
   tags = {
     owner = "hiba"
